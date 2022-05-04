@@ -1,0 +1,69 @@
+cabal-version:       3.6
+name:                plutus-tests
+version:             0.1.0.0
+-- synopsis:
+-- description:
+-- homepage:
+license:             BSD-3-Clause
+-- license-file:        LICENSE
+author:              Andrey Vlasov
+maintainer:          example@example.com
+copyright:           2022 Andrey Vlasov
+-- category:            Web
+build-type:          Simple
+-- extra-source-files:  README.md
+
+common deps
+  ghc-options:         -O2
+                       -Wall
+                       -Wcompat
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wredundant-constraints
+                       -Wmissing-export-lists
+                       -Wmissing-deriving-strategies
+                       -Werror
+  default-language:    Haskell2010
+  default-extensions:  BangPatterns
+                       BinaryLiterals
+                       ConstraintKinds
+                       DataKinds
+                       DeriveFunctor
+                       DeriveGeneric
+                       DeriveTraversable
+                       DerivingStrategies
+                       DerivingVia
+                       DuplicateRecordFields
+                       EmptyCase
+                       FlexibleContexts
+                       FlexibleInstances
+                       GADTs
+                       GeneralizedNewtypeDeriving
+                       HexFloatLiterals
+                       InstanceSigs
+                       ImportQualifiedPost
+                       KindSignatures
+                       LambdaCase
+                       MultiParamTypeClasses
+                       NoImplicitPrelude
+                       NumericUnderscores
+                       OverloadedStrings
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeApplications
+                       TypeOperators
+                       TypeSynonymInstances
+                       UndecidableInstances
+
+test-suite plutus-tests
+  import:              deps
+  type:                exitcode-stdio-1.0
+  main-is:             Main.hs
+  hs-source-dirs:      tests
+  ghc-options:         -O2 -threaded -rtsopts "-with-rtsopts=-N -I0"
+  build-depends:       base
+                     , plutarch
+                     , plutip
+                     , plutus-core
+                     , tasty
