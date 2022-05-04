@@ -80,17 +80,17 @@
         "servant-purescript": "servant-purescript"
       },
       "locked": {
-        "lastModified": 1650976836,
-        "narHash": "sha256-7+Ea6uwJYsYSUSF/Gm1IBGmeut2ICc7SSKkv39kY1IU=",
+        "lastModified": 1651488509,
+        "narHash": "sha256-WVTYecS6UY0rcxofYj6gBe9yag7Lo63pu/VsC9iyqqs=",
         "owner": "mlabs-haskell",
         "repo": "bot-plutus-interface",
-        "rev": "ab8fba2bcb039638b7f14e95b85d067e55dff9a3",
+        "rev": "9ca5939b3b6ef1d052318f25ac88444baea52d8b",
         "type": "github"
       },
       "original": {
         "owner": "mlabs-haskell",
         "repo": "bot-plutus-interface",
-        "rev": "ab8fba2bcb039638b7f14e95b85d067e55dff9a3",
+        "rev": "9ca5939b3b6ef1d052318f25ac88444baea52d8b",
         "type": "github"
       }
     },
@@ -966,8 +966,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1651650323,
-        "narHash": "sha256-Ymtq1fQDbC/IVamr5s3u+Kx4dCiAK1PODeJwTOqn/J0=",
+        "lastModified": 1651660216,
+        "narHash": "sha256-BCl404h1knYNKb/SpvkpgYHSokMNgDX0gRoqKJ/GuTM=",
         "path": "/home/aka_dude/Work/mlabs/plutip",
         "type": "path"
       },
@@ -1029,24 +1029,21 @@
     },
     "root": {
       "inputs": {
-        "bot-plutus-interface": [
-          "plutip",
-          "bot-plutus-interface"
-        ],
         "flake-utils": "flake-utils",
         "haskell-nix": [
           "plutip",
           "haskell-nix"
         ],
-        "iohk-nix": [
-          "plutip",
-          "iohk-nix"
-        ],
         "nixpkgs": [
           "plutip",
           "nixpkgs"
         ],
-        "plutip": "plutip"
+        "plutip": "plutip",
+        "plutus": [
+          "plutip",
+          "bot-plutus-interface",
+          "plutus"
+        ]
       }
     },
     "servant-purescript": {
