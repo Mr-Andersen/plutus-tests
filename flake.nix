@@ -2,7 +2,8 @@
   inputs = {
     plutip.url = "path:/home/aka_dude/Work/mlabs/plutip";
     nixpkgs.follows = "plutip/nixpkgs";
-    haskell-nix.follows = "plutip/haskell-nix";
+    # haskell-nix.follows = "plutip/haskell-nix";
+    haskell-nix.url = "github:mlabs-haskell/haskell.nix";
     # bot-plutus-interface.follows = "plutip/bot-plutus-interface";
     # iohk-nix.follows = "plutip/iohk-nix";
     plutus.follows = "plutip/bot-plutus-interface/plutus";
@@ -21,7 +22,7 @@
                 plutus-tests =
                   final.haskell-nix.project' {
                     src = ./.;
-                    compiler-nix-name = "ghc921";
+                    compiler-nix-name = "ghc8107";
                     shell.tools = {
                       cabal = {};
                       # hlint = {};
@@ -33,11 +34,10 @@
                     #   nixpkgs-fmt
                     # ];
 
-                    # This adds `js-unknown-ghcjs-cabal` to the shell.
-                    # shell.crossPlatforms = p: [p.ghcjs];
-                    modules = [{
-                      reinstallableLibGhc = true;
-                    }];
+                    # modules = [{
+                    #   reinstallableLibGhc = true;
+                    # }];
+                    extraSources = [{ src = plutus; subdirs = [ "plutus-core" ]; }];
                   };
                 })
             ];
